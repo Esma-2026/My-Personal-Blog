@@ -103,6 +103,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const typingTitle = document.querySelector(".section-title-large");
+
+if (typingTitle) {
+  const text = "Artikel Terbaru";
+  let index = 0;
+
+  function animateTitle() {
+    typingTitle.textContent = text.slice(0, index + 1);
+    index++;
+
+    if (index < text.length) {
+      setTimeout(animateTitle, 120);
+    } else {
+      setTimeout(() => {
+        index = 0;
+        typingTitle.textContent = "";
+        animateTitle();
+      }, 5000);
+    }
+  }
+
+  animateTitle();
+}
+
   // Menu kecil untuk navigasi pada layar ponsel.
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".main-nav");
