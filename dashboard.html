@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard untuk mengelola artikel belajar Siti Maesaroh.">
+
+  <meta
+    name="description"
+    content="Dashboard untuk mengelola artikel belajar Siti Maesaroh."
+  >
+
   <title>Dashboard Artikel — Siti Maesaroh</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+  >
+
+  <link
+    rel="stylesheet"
+    href="assets/css/styles.css"
+  >
+
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/admin-auth.js" defer></script>
   <script src="assets/js/dashboard.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
   <header class="site-header"><div class="container nav-wrap profile-strip">
@@ -44,7 +69,7 @@
   <main id="main-content">
     <section class="page-hero page-hero-compact"><div class="container page-hero-inner">
       <p class="eyebrow">AREA PRIVAT</p>
-      <h1>Dashboard artikel<br><span class="text-gradient">hanya untuk admin.</span></h1>
+      <h1>Dashboard artikel <span class="text-gradient">hanya untuk admin.</span></h1>
       <p>Halaman ini tidak terhubung ke navigasi publik dan hanya bisa dibuka setelah login.</p>
     </div></section>
 
@@ -100,49 +125,234 @@
                   <span id="article-editor-category" class="article-editor-indicator"></span>
                 </div>
               </div>
+              
               <div class="rich-editor">
-                <div class="rich-editor-toolbar" role="toolbar" aria-label="Pemformatan isi artikel">
-                  <label class="editor-select-label" for="editor-font" title="Jenis font">Aa</label>
-                  <select id="editor-font" aria-label="Jenis font">
-                    <option value="DM Sans">DM Sans</option>
-                    <option value="Manrope">Manrope</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Verdana">Verdana</option>
-                  </select>
-                  <label class="editor-select-label" for="editor-size" title="Ukuran font">A↕</label>
-                  <select id="editor-size" aria-label="Ukuran font">
-                    <option value="12">12 px</option>
-                    <option value="14">14 px</option>
-                    <option value="16" selected>16 px</option>
-                    <option value="18">18 px</option>
-                    <option value="24">24 px</option>
-                    <option value="32">32 px</option>
-                  </select>
-                  <label class="editor-select-label" for="editor-line-height" title="Jarak baris">↕</label>
-                  <select id="editor-line-height" aria-label="Jarak baris paragraf">
-                    <option value="1.2">Rapat</option>
-                    <option value="1.5">1,5</option>
-                    <option value="1.8" selected>1,8</option>
-                    <option value="2">2</option>
-                    <option value="2.5">Renggang</option>
-                  </select>
-                  <button class="editor-tool-button" type="button" data-editor-command="bold" aria-label="Tebalkan" aria-pressed="false"><strong>B</strong></button>
-                  <button class="editor-tool-button" type="button" data-editor-command="italic" aria-label="Miring" aria-pressed="false"><em>I</em></button>
-                  <button class="editor-tool-button" type="button" data-editor-command="underline" aria-label="Garis bawah" aria-pressed="false"><u>U</u></button>
-                  <button class="editor-tool-button" type="button" data-editor-command="formatBlock" data-editor-value="<p>" aria-label="Paragraf" title="Paragraf" aria-pressed="false">¶</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="formatBlock" data-editor-value="<h2>" aria-label="Judul" title="Judul" aria-pressed="false">H₂</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="formatBlock" data-editor-value="<h3>" aria-label="Subjudul" title="Subjudul" aria-pressed="false">H₃</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="formatBlock" data-editor-value="<blockquote>" aria-label="Kutipan" title="Kutipan" aria-pressed="false">❝</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="justifyLeft" aria-label="Rata kiri" title="Rata kiri" aria-pressed="false">⇤</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="justifyCenter" aria-label="Rata tengah" title="Rata tengah" aria-pressed="false">↔</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="justifyRight" aria-label="Rata kanan" title="Rata kanan" aria-pressed="false">⇥</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="justifyFull" aria-label="Rata kiri kanan" title="Rata kiri kanan" aria-pressed="false">☰</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="insertUnorderedList" aria-label="Daftar titik" title="Daftar titik" aria-pressed="false">•≡</button>
-                  <button class="editor-tool-button" type="button" data-editor-command="insertOrderedList" aria-label="Daftar nomor" title="Daftar nomor" aria-pressed="false">1≡</button>
-                  <button class="editor-tool-button" id="toggle-figure-fields" type="button" aria-label="Sisipkan gambar" title="Sisipkan gambar" aria-expanded="false" aria-controls="figure-fields">▧</button>
-                  <button class="editor-tool-button" id="toggle-link-fields" type="button" aria-label="Sisipkan hyperlink" title="Sisipkan hyperlink" aria-expanded="false" aria-controls="link-fields">↗</button>
-                </div>
+  <div
+    class="rich-editor-toolbar"
+    role="toolbar"
+    aria-label="Pemformatan isi artikel"
+  >
+    <label
+      class="editor-select-label"
+      for="editor-font"
+      title="Jenis font"
+    >
+      Aa
+    </label>
+
+    <select id="editor-font" aria-label="Jenis font">
+      <option value="DM Sans">DM Sans</option>
+      <option value="Manrope">Manrope</option>
+      <option value="Arial">Arial</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Verdana">Verdana</option>
+    </select>
+
+    <label
+      class="editor-select-label"
+      for="editor-size"
+      title="Ukuran font"
+    >
+      A↕
+    </label>
+
+    <select id="editor-size" aria-label="Ukuran font">
+      <option value="12">12 px</option>
+      <option value="14">14 px</option>
+      <option value="16" selected>16 px</option>
+      <option value="18">18 px</option>
+      <option value="24">24 px</option>
+      <option value="32">32 px</option>
+    </select>
+
+    <label
+      class="editor-select-label"
+      for="editor-line-height"
+      title="Jarak baris"
+    >
+      ↕
+    </label>
+
+    <select
+      id="editor-line-height"
+      aria-label="Jarak baris paragraf"
+    >
+      <option value="1.2">Rapat</option>
+      <option value="1.5">1,5</option>
+      <option value="1.8" selected>1,8</option>
+      <option value="2">2</option>
+      <option value="2.5">Renggang</option>
+    </select>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="bold"
+      aria-label="Tebalkan"
+      aria-pressed="false"
+    >
+      <strong>B</strong>
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="italic"
+      aria-label="Miring"
+      aria-pressed="false"
+    >
+      <em>I</em>
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="underline"
+      aria-label="Garis bawah"
+      aria-pressed="false"
+    >
+      <u>U</u>
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="formatBlock"
+      data-editor-value="&lt;p&gt;"
+      aria-label="Paragraf"
+      title="Paragraf"
+      aria-pressed="false"
+    >
+      ¶
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="formatBlock"
+      data-editor-value="&lt;h2&gt;"
+      aria-label="Judul"
+      title="Judul"
+      aria-pressed="false"
+    >
+      H₂
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="formatBlock"
+      data-editor-value="&lt;h3&gt;"
+      aria-label="Subjudul"
+      title="Subjudul"
+      aria-pressed="false"
+    >
+      H₃
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="formatBlock"
+      data-editor-value="&lt;blockquote&gt;"
+      aria-label="Kutipan"
+      title="Kutipan"
+      aria-pressed="false"
+    >
+      ❝
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="justifyLeft"
+      aria-label="Rata kiri"
+      title="Rata kiri"
+      aria-pressed="false"
+    >
+      ⇤
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="justifyCenter"
+      aria-label="Rata tengah"
+      title="Rata tengah"
+      aria-pressed="false"
+    >
+      ↔
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="justifyRight"
+      aria-label="Rata kanan"
+      title="Rata kanan"
+      aria-pressed="false"
+    >
+      ⇥
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="justifyFull"
+      aria-label="Rata kiri kanan"
+      title="Rata kiri kanan"
+      aria-pressed="false"
+    >
+      ☰
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="insertUnorderedList"
+      aria-label="Daftar titik"
+      title="Daftar titik"
+      aria-pressed="false"
+    >
+      •≡
+    </button>
+
+    <button
+      class="editor-tool-button"
+      type="button"
+      data-editor-command="insertOrderedList"
+      aria-label="Daftar nomor"
+      title="Daftar nomor"
+      aria-pressed="false"
+    >
+      1≡
+    </button>
+
+    <button
+      class="editor-tool-button"
+      id="toggle-figure-fields"
+      type="button"
+      aria-label="Sisipkan gambar"
+      title="Sisipkan gambar"
+      aria-expanded="false"
+      aria-controls="figure-fields"
+    >
+      ▧
+    </button>
+
+    <button
+      class="editor-tool-button"
+      id="toggle-link-fields"
+      type="button"
+      aria-label="Sisipkan hyperlink"
+      title="Sisipkan hyperlink"
+      aria-expanded="false"
+      aria-controls="link-fields"
+    >
+      ↗
+    </button>
+  </div>
+
                 <div class="editor-insert-panel" id="figure-fields" hidden>
                   <div class="editor-insert-fields">
                     <label for="figure-asset-select">Pilih gambar dari aset
@@ -168,15 +378,20 @@
                         <option value="assets/images/10102026/identitas-auth.png">Identitas Auth</option>
                         <option value="assets/images/10102026/kontrol-akses.png">Kontrol Akses</option>
                         <option value="assets/images/10102026/zero-trust.png">Zero Trust</option>
-                        <option value="assets/images/13102026/gambar.dua.png">Gambar Dua</option>
-                        <option value="assets/images/13102026/gambar.satu.png">Gambar Satu</option>
-                        <option value="assets/images/13102026/gambar.tiga.png">Gambar Tiga</option>
-                        <option value="assets/images/13102026/gambar.empat.png">Gambar Empat</option>
-                        <option value="assets/images/13102026/gambar.lima.png">Gambar Lima</option>
-                        <option value="assets/images/13102026/gambar.enam.png">Gambar Enam</option>
-                        <option value="assets/images/13102026/gambar.tujuh.png">Gambar Tujuh</option>
-                        <option value="assets/images/13102026/kartu.artikel.jpg">Kartu Artikel</option>
-                        <option value="assets/images/13102026/add.logic.png">Add Logic</option>
+                        <option value="assets/images/13102026/01-foundational-csharp-certificate.png">Gambar Satu</option>
+                        <option value="assets/images/13102026/02-foundational-csharp-learning-paths.png">Gambar Dua</option>
+                        <option value="assets/images/13102026/03-first-csharp-program-console.png">Gambar Tiga</option>
+                        <option value="assets/images/13102026/04-add-logic.png">Gambar Empat</option>
+                        <option value="assets/images/13102026/05-percabangan.png">Gambar Lima</option>
+                        <option value="assets/images/13102026/06-work-withC.png">Gambar Enam</option>
+                        <option value="assets/images/13102026/07-implementasi-konversi.png">Gambar Tujuh</option>
+                        <option value="assets/images/13102026/08-create-methods.png">Gambar Delapan</option>
+                        <option value="assets/images/13102026/09-method-console.png">Gambar Sembilan</option>
+                        <option value="assets/images/13102026/10-debug.png">Gambar Sepuluh</option>
+                        <option value="assets/images/13102026/11-materi-debugging.png">Gambar Sebelas</option>
+                        <option value="assets/images/13102026/12-except-handling.png">Gambar Dua Belas</option>
+                        <option value="assets/images/13102026/13-program-console.png">Gambar Tiga Belas</option>
+                        <option value="assets/images/13102026/kartu.artikel.jpg">Cloud Computing</option>
                       </select>
                     </label>
                     <label for="figure-url">Path gambar atau URL
@@ -193,6 +408,7 @@
                   <img class="figure-preview" id="figure-preview" alt="Pratinjau gambar yang akan disisipkan" hidden>
                   <p class="editor-insert-status" id="figure-status" role="status" aria-live="polite"></p>
                 </div>
+
                 <div class="editor-insert-panel figure-layout-panel" id="figure-layout-fields" hidden>
                   <p class="editor-panel-title">Perataan gambar</p>
                   <p class="editor-insert-status" id="figure-layout-status" role="status" aria-live="polite">Klik gambar di editor untuk memilih dan mengatur perataannya.</p>
