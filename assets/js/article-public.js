@@ -3,7 +3,7 @@ const cardImagesByArticleId = new Map([
   ["1-web-development", "assets/images/kartu.artikel.2.png"],
   ["2-learning-journey", "assets/images/Esma-Learning.Journey.png"],
   ["3-artificial-intelligence", "assets/images/10102026/pusat-zero-trust.png"],
-  ["4-cloud-computing", "assets/images/project-cloud.svg"],
+  ["4-cloud-computing", "assets/images/13102026/kartu.artikel.jpg"],
   ["5-community-learning", "assets/images/Ms.Learn.png"],
   ["6-document-process", "assets/images/project-web.svg"],
   ["7-scam-ready-asean", "assets/images/scam-asean.png"],
