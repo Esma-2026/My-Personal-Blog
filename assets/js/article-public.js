@@ -193,8 +193,13 @@ const renderBlogCards = (articles) => {
   const list = document.querySelector("#article-list");
   if (!list) return;
   const storedIds = new Set();
+  const sortedArticles = [...articles].sort((a, b) => {
+  const aDate = Date.parse(a.updatedAt || a.publishedAt || "") || 0;
+  const bDate = Date.parse(b.updatedAt || b.publishedAt || "") || 0;
+  return bDate - aDate;
+});
 
-  articles.forEach((article) => {
+  sortedArticles.forEach((article) => {
     const existing = list.querySelector(`[data-article-id="${CSS.escape(String(article.id))}"]`);
     if (existing) {
       updateExistingBlogCard(existing, article);
