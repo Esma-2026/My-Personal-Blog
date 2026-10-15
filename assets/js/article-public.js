@@ -192,8 +192,33 @@ const updateExistingBlogCard = (card, article) => {
 const renderBlogCards = (articles) => {
   const list = document.querySelector("#article-list");
   if (!list) return;
+  const page = window.location.pathname.split("/").pop();
+
+let filteredArticles = [...articles];
+
+if (page === "mlsa.html") {
+  filteredArticles = filteredArticles.filter(
+    article => (article.category || "").toLowerCase() === "mlsa"
+  );
+}
+
+if (page === "scam-ready-asean.html") {
+  filteredArticles = filteredArticles.filter(
+    article => (article.category || "").toLowerCase() === "scam ready asean"
+  );
+}
+
+if (page === "community.html") {
+  filteredArticles = filteredArticles.filter(
+    article => (article.category || "").toLowerCase() === "my community"
+  );
+}
+
+console.log(page);
+console.log(filteredArticles);
+
   const storedIds = new Set();
-  const sortedArticles = [...articles].sort((a, b) => {
+  const sortedArticles = [...filteredArticles].sort((a, b) => {
   const aDate = Date.parse(a.updatedAt || a.publishedAt || "") || 0;
   const bDate = Date.parse(b.updatedAt || b.publishedAt || "") || 0;
   return bDate - aDate;
