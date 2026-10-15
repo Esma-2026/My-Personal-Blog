@@ -6,7 +6,7 @@ const cardImagesByArticleId = new Map([
   ["4-cloud-computing", "assets/images/13102026/kartu.artikel.jpg"],
   ["5-community-learning", "assets/images/Ms.Learn.png"],
   ["6-document-process", "assets/images/project-web.svg"],
-  ["7-scam-ready-asean", "assets/images/scam-asean.png"],
+  ["7-scam-ready-asean", "assets/images/01-scam-ready.png"],
   ["8-halal-journey", "assets/images/halal-journey.png"]
 ]);
 
