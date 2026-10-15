@@ -1,5 +1,15 @@
 [
   {
+    "id": "draft-1792079791301",
+    "title": "Judul artikel baru",
+    "category": "MLSA",
+    "summary": "Ringkasan singkat tentang artikel ini.",
+    "content": "<p>Tuliskan isi artikel Anda di sini.</p>",
+    "published": true,
+    "publishedAt": "2026-10-15T15:57:51.178Z",
+    "updatedAt": "2026-10-15T15:57:13.494Z"
+  },
+  {
     "id": "1-web-development",
     "title": "Dari Baris Kode Pertama hingga Website Online: Perjalanan Belajar Microsoft Learn, Agentic AI, dan GitHub",
     "category": "Web Development",
