@@ -69,9 +69,52 @@ const form = document.querySelector("#article-form");
 const inputs = {
   title: document.querySelector("#article-title"),
   category: document.querySelector("#article-category"),
+  subcategory: document.querySelector("#article-subcategory"),
   summary: document.querySelector("#article-summary"),
   content: document.querySelector("#article-content")
 };
+const subcategoryOptions = {
+  MLSA: [
+    "Artificial Intelligence",
+    "Visual Studio Code",
+    "Microsoft 365",
+    "GitHub",
+    "Microsoft Learn",
+    "Azure",
+    "Cybersecurity",
+    "Cloud Computing",
+    "Data & Analytics",
+    "Developer Tools",
+    "Events & Community",
+    "Certification Journey"
+  ],
+
+  "My Community": [
+    "Muhammadiyah",
+    "Nasyiatul 'Aisyiyah",
+    "Rebana Istiqomah"
+  ]
+};
+inputs.category.addEventListener("change", () => {
+  const subcategory =
+    document.querySelector("#article-subcategory");
+
+  const options =
+    subcategoryOptions[inputs.category.value] || [];
+
+  subcategory.innerHTML =
+    '<option value="">Pilih subkategori</option>';
+
+  options.forEach(option => {
+    const item = document.createElement("option");
+
+    item.value = option;
+    item.textContent = option;
+
+    subcategory.appendChild(item);
+  });
+});
+
 const editor = document.querySelector("#article-content-editor");
 const editorToolbar = document.querySelector(".rich-editor-toolbar");
 const fontSelect = document.querySelector("#editor-font");
@@ -518,10 +561,18 @@ const renderArticleList = () => {
     listItem.type = "button";
     listItem.className = `article-list-item ${article.id === currentArticleId ? "is-active" : ""}`;
     listItem.innerHTML = `
-      <span class="article-list-tag">${article.category}</span>
-      <strong>${article.title}</strong>
-      <small>${article.summary}</small>
-    `;
+  <span class="article-list-tag">
+    ${article.category}
+  </span>
+
+  <strong>
+    ${article.title}
+  </strong>
+
+  <small>
+    ${article.subcategory || ""}
+  </small>
+`;
     listItem.addEventListener("click", () => {
       currentArticleId = article.id;
       updateForm(article);
@@ -581,12 +632,13 @@ form.addEventListener("submit", async (event) => {
     id: currentArticleId,
     title,
     category,
+    subcategory: inputs.subcategory.value,
     summary,
     content,
     published: true,
     publishedAt: previousArticle?.publishedAt || now,
     updatedAt: now
-  };
+};
   inputs.content.value = content;
 
   saveArticleButton.disabled = true;

@@ -291,7 +291,50 @@ const renderArticleDetail = (articles) => {
   body.innerHTML = cleanArticleHtml(article.content);
   detail.replaceChildren(backLink, category, title, summary, body);
 };
+const renderCategoryCards = (selector, articles) => {
+  const container = document.querySelector(selector);
 
+  if (!container) return;
+
+  container.replaceChildren(
+    ...articles.map(makeArticleCard)
+  );
+};
+const renderCommunityCategories = (articles) => {
+
+  const muhammadiyah = articles.filter(
+    article =>
+      article.category === "My Community" &&
+      article.subcategory === "Muhammadiyah"
+  );
+
+  const na = articles.filter(
+    article =>
+      article.category === "My Community" &&
+      article.subcategory === "Nasyiatul 'Aisyiyah"
+  );
+
+  const rebana = articles.filter(
+    article =>
+      article.category === "My Community" &&
+      article.subcategory === "Rebana Istiqomah"
+  );
+
+  renderCategoryCards(
+    "#community-muhammadiyah",
+    muhammadiyah
+  );
+
+  renderCategoryCards(
+    "#community-na",
+    na
+  );
+
+  renderCategoryCards(
+    "#community-rebana",
+    rebana
+  );
+};
 const renderPublicArticles = async () => {
   let articles;
   try {
@@ -305,11 +348,11 @@ const renderPublicArticles = async () => {
     }
     return;
   }
-  renderBlogCards(articles);
-  renderHomeCards(articles);
-  renderArticleDetail(articles);
+renderBlogCards(articles);
+renderHomeCards(articles);
+renderArticleDetail(articles);
+renderCommunityCategories(articles); 
 };
-
 document.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) return;
   const card = event.target.closest(".article-card[data-article-id]");
@@ -318,3 +361,4 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", renderPublicArticles);
+
