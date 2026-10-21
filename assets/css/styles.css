@@ -213,9 +213,15 @@ h1, h2, h3 { font-family: var(--heading); }
 .page-hero-inner { max-width: 1120px; }
 .page-hero .eyebrow { margin-bottom: 13px; font-size: 18px; }
 .page-hero h1 { margin-bottom: 15px; font-size: clamp(41px, 5vw, 57px); line-height: 1.2; letter-spacing: -2.8px; }
-.page-hero-inner > p:last-child { max-width: 560px; margin-bottom: 0; color: var(--muted); font-size: 18px; line-height: 1.6;}
+.page-hero-inner > p:last-child { max-width: 1000px; margin-bottom: 0; color: var(--muted); font-size: 18px; line-height: 1.6;}
 .page-hero-compact { padding: 65px 0 58px; }
-.about-story-grid { display: grid; grid-template-columns: .82fr 1.18fr; align-items: center; gap: 80px; }
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: .82fr 1.18fr;
+    align-items: center;
+    gap: 80px;
+}
 .story-image { position: relative; width: 100%; max-width: 420px; aspect-ratio: 0.9; background: #111; border: 6px solid #edf5ff; border-radius: 18px; }
 .story-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; }
 .image-caption {
@@ -259,22 +265,7 @@ h1, h2, h3 { font-family: var(--heading); }
         transform: translateY(0);
     }
 }
-.story-copy h2 { margin-bottom: 17px; font-size: 32px; letter-spacing: -1.3px; }
-.story-copy > p:not(.eyebrow) { margin-bottom: 15px; color: var(--muted); font-size: 16px; line-height: 1.8; }
-.story-copy .text-link {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--blue);
-    text-decoration: none;
-    transition: color 0.25s ease, transform 0.25s ease;
-}
-.story-copy .text-link:hover {
-    color: #0056b3;
-    transform: translateX(5px);
-    text-decoration: underline;
-}
+
 
 .interest-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
 .interest-card { position: relative; min-height: 229px; padding: 25px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
@@ -665,11 +656,9 @@ h1, h2, h3 { font-family: var(--heading); }
 
 /* Deskripsi di bawah judul utama */
 .project-page .page-hero .hero-description {
-    width: max-content;
-    max-width: none;
+    max-width: 900px;
     font-size: 17px;
     line-height: 1.7;
-    white-space: nowrap;
 }
 @media (max-width: 768px) {
     .project-page .page-hero .hero-description {
@@ -715,4 +704,97 @@ h1, h2, h3 { font-family: var(--heading); }
         max-width: 1400px;
         padding: 18px 32px 36px;
     }
+}
+/* =========================
+   My Community Hero
+========================= */
+
+.community-hero .page-hero-inner {
+    max-width: 1400px;
+}
+.community-hero .hero-description {
+    max-width: 1100px;
+}
+
+.community-hero h1 {
+    max-width: 1100px;
+}
+
+@media (min-width: 1200px) {
+    .community-hero .hero-description {
+        max-width: 1100px;
+    }
+}
+/* =========================
+   About Hero
+========================= */
+
+.about-hero .page-hero-inner {
+    max-width: 1600px;
+}
+
+.about-hero h1 {
+    max-width: 1000px;
+}
+
+.about-hero .page-hero-inner > p:last-child {
+    max-width: 1000px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+/* =========================
+   About - Profile Image
+========================= */
+
+.story-image {
+    position: relative;
+    isolation: isolate;
+}
+
+.story-image::before {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.18),
+        rgba(139, 92, 246, 0.18)
+    );
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.story-image img {
+    display: block;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.08),
+        0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.image-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+
+    min-width: 320px;
+    max-width: 380px;
+
+    padding: 16px 28px;
+
+    border-radius: 18px;
+    background: rgba(255, 252, 245, 0.96);
+
+    color: #b8860b;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+
+    border-left: 4px solid #d4a017;
+
+    box-shadow:
+        0 12px 30px rgba(212, 160, 23, 0.18);
+
+    animation: quoteReveal 1.2s ease-out forwards;
 }
