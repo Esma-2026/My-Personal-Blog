@@ -219,12 +219,30 @@ console.log(filteredArticles);
 
   const storedIds = new Set();
   const sortedArticles = [...filteredArticles].sort((a, b) => {
-  const aDate = Date.parse(a.updatedAt || a.publishedAt || "") || 0;
-  const bDate = Date.parse(b.updatedAt || b.publishedAt || "") || 0;
+  const aDate = Date.parse(a.publishedAt || "") || 0;
+  const bDate = Date.parse(b.publishedAt || "") || 0;
   return bDate - aDate;
 });
+const mlsaLatest = sortedArticles.find(
+  article =>
+    article.category !== "SCAM READY ASEAN" &&
+    article.category !== "My Community"
+);
 
-  sortedArticles.forEach((article) => {
+const scamLatest = sortedArticles.find(
+  article => article.category === "SCAM READY ASEAN"
+);
+
+const communityLatest = sortedArticles.find(
+  article => article.category === "My Community"
+);
+
+renderSidebarCard("#sidebar-mlsa", mlsaLatest);
+renderSidebarCard("#sidebar-scam", scamLatest);
+renderSidebarCard("#sidebar-community", communityLatest);
+
+const articlesToRender = sortedArticles.slice(0, 6);
+  articlesToRender.forEach((article) => {
     const existing = list.querySelector(`[data-article-id="${CSS.escape(String(article.id))}"]`);
     if (existing) {
       updateExistingBlogCard(existing, article);
@@ -242,14 +260,32 @@ console.log(filteredArticles);
   document.querySelector("#article-search")?.dispatchEvent(new Event("input", { bubbles: true }));
 };
 
+const renderSidebarCard = (selector, article) => {
+  const container = document.querySelector(selector);
+
+  if (!container || !article) return;
+
+  const card = makeArticleCard(article);
+
+  card.classList.add("sidebar-card");
+
+  container.replaceChildren(card);
+};
 const renderHomeCards = (articles) => {
   const list = document.querySelector("#home-article-list");
   if (!list || articles.length === 0) return;
   const sortedArticles = [...articles].sort((a, b) => {
-    const aDate = Date.parse(a.updatedAt || a.publishedAt || "") || 0;
-    const bDate = Date.parse(b.updatedAt || b.publishedAt || "") || 0;
+    const aDate = Date.parse(a.publishedAt || "") || 0;
+    const bDate = Date.parse(b.publishedAt || "") || 0;
     return bDate - aDate;
   });
+  console.log(
+  "HOME ARTICLES",
+  sortedArticles.slice(0, 3).map(article => ({
+    title: article.title,
+    publishedAt: article.publishedAt
+  }))
+);
   list.replaceChildren(...sortedArticles.slice(0, 3).map(makeArticleCard));
 };
 
