@@ -122,7 +122,13 @@ const articleText = (content) => {
 const readingTime = (article) => Math.max(1, Math.ceil(articleText(article.content).trim().split(/\s+/).filter(Boolean).length / 200));
 
 const articleHref = (id) => `blog.html?article=${encodeURIComponent(id)}`;
-const articleCardImage = (article) => cardImagesByArticleId.get(String(article.id)) || defaultCardImage;
+const articleCardImage = (article) => {
+  return (
+    article.thumbnail ||
+    cardImagesByArticleId.get(String(article.id)) ||
+    defaultCardImage
+  );
+};
 
 const makeArticleCard = (article, index) => {
   const card = document.createElement("article");

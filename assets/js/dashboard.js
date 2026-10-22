@@ -71,8 +71,20 @@ const inputs = {
   category: document.querySelector("#article-category"),
   subcategory: document.querySelector("#article-subcategory"),
   summary: document.querySelector("#article-summary"),
+  thumbnail: document.querySelector("#article-thumbnail"),
   content: document.querySelector("#article-content")
 };
+const thumbnailAssetSelect =
+  document.querySelector("#thumbnail-asset-select");
+const thumbnailPreview = document.querySelector("#thumbnail-preview");
+
+if (inputs.thumbnail && thumbnailPreview) {
+  inputs.thumbnail.addEventListener("change", () => {
+    thumbnailPreview.src = inputs.thumbnail.value;
+    thumbnailPreview.style.display =
+      inputs.thumbnail.value ? "block" : "none";
+  });
+}
 const subcategoryOptions = {
   MLSA: [
     "Artificial Intelligence",
@@ -543,6 +555,7 @@ const updateForm = (article) => {
   inputs.title.value = article.title || "";
   inputs.category.value = article.category || "";
   inputs.summary.value = article.summary || "";
+  inputs.thumbnail.value = article.thumbnail || "";
   editor.innerHTML = articleContentToHtml(article.content || "");
   savedEditorRange = null;
   editorValidationStatus.textContent = "";
@@ -592,6 +605,7 @@ const createNewArticle = () => {
     title: "Judul artikel baru",
     category: "Kategori",
     summary: "Ringkasan singkat tentang artikel ini.",
+    thumbnail: "/assets/images/default-thumbnail.jpg",
     content: "Tuliskan isi artikel Anda di sini.",
     published: false
   };
@@ -611,9 +625,14 @@ form.addEventListener("submit", async (event) => {
   const title = inputs.title.value.trim();
   const category = inputs.category.value.trim();
   const summary = inputs.summary.value.trim();
+  const thumbnail =
+  document.getElementById('article-thumbnail')
+    ?.value
+    ?.trim() || '';
   const content = sanitizeEditorHtml(editor.innerHTML).trim();
   const contentDocument = new DOMParser().parseFromString(content, "text/html");
   const hasBody = Boolean(contentDocument.body.textContent.trim() || contentDocument.body.querySelector("img"));
+  
 
   editorValidationStatus.textContent = hasBody ? "" : "Isi artikel tidak boleh kosong.";
   if (!title || !category || !summary || !content || !hasBody) {
@@ -634,6 +653,7 @@ form.addEventListener("submit", async (event) => {
     category,
     subcategory: inputs.subcategory.value,
     summary,
+    thumbnail,
     content,
     published: true,
     publishedAt: previousArticle?.publishedAt || now,
