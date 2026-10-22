@@ -1,5 +1,17 @@
 [
   {
+    "id": "draft-1792674029205",
+    "title": "Judul artikel baru",
+    "category": "MLSA",
+    "subcategory": "Artificial Intelligence",
+    "summary": "Ringkasan singkat tentang artikel ini.",
+    "thumbnail": "assets/images/10102026/kontrol-akses.png",
+    "content": "<p>Tuliskan isi artikel Anda di sini.</p>",
+    "published": true,
+    "publishedAt": "2026-10-22T14:19:41.347Z",
+    "updatedAt": "2026-10-22T14:19:07.065Z"
+  },
+  {
     "id": "draft-1792079791301",
     "title": "Terima Kasih, Para Perintis. Kini Kami Siap Melanjutkan.",
     "category": "My Community",
