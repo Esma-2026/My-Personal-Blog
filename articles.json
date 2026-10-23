@@ -1,17 +1,5 @@
 [
   {
-    "id": "draft-1792674029205",
-    "title": "Judul artikel baru",
-    "category": "MLSA",
-    "subcategory": "Artificial Intelligence",
-    "summary": "Ringkasan singkat tentang artikel ini.",
-    "thumbnail": "assets/images/10102026/kontrol-akses.png",
-    "content": "<p>Tuliskan isi artikel Anda di sini.</p>",
-    "published": true,
-    "publishedAt": "2026-10-22T14:19:41.347Z",
-    "updatedAt": "2026-10-22T14:19:07.065Z"
-  },
-  {
     "id": "draft-1792079791301",
     "title": "Terima Kasih, Para Perintis. Kini Kami Siap Melanjutkan.",
     "category": "My Community",
@@ -19,8 +7,8 @@
     "summary": "Pengukuhan Perdana Pimpinan Ranting Nasyiatul 'Aisyiyah sebagai Buah Kaderisasi yang Melahirkan Generasi Penerus",
     "content": "<figure><img src=\"assets/images/NA-kartu-artikel.png\" alt=\"kartu artikel\" style=\"margin-left: auto; margin-right: auto;\"></figure><div style=\"text-align: center;\">\n\n</div><p>Tidak semua perjuangan langsung menampakkan hasil. Ada yang\nmembutuhkan waktu bertahun-tahun untuk tumbuh, berkembang, dan akhirnya\nberbuah. Begitu pula yang terjadi di Ranting Muhammadiyah Bondolharjo.\nPengukuhan Perdana Pimpinan Ranting Nasyiatul 'Aisyiyah bukanlah sebuah\nperistiwa yang terjadi dalam semalam, melainkan puncak dari proses panjang\nkaderisasi yang telah dirintis oleh para perintis dan pembina selama\nbertahun-tahun.</p><p>\n\n\n\n</p><p>Hari ini, ketika para kader muda berdiri mengucapkan ikrar\njabatan dan menerima amanah organisasi, sesungguhnya yang sedang disaksikan\nbukanlah sebuah awal. Yang sedang disaksikan adalah buah dari benih-benih yang\ntelah ditanam jauh sebelumnya oleh mereka yang dengan sabar membimbing,\nmengarahkan, dan mempercayai generasi muda untuk terus bertumbuh.</p><p><b>Dari Rebana Menjadi Ruang Kaderisasi</b></p><p></p><figure><img src=\"assets/images/NA-grup-rebana.png\" alt=\"grup rebana\" style=\"margin-left: auto; margin-right: auto;\"></figure><p style=\"text-align: center;\"><i><b>Gambar 1. Rebana Istiqomah Bondolharjo menjadi salah satu\nruang pembinaan kader perempuan muda di lingkungan ranting.</b></i></p><p>Sebelum Nasyiatul 'Aisyiyah terbentuk secara resmi di\ntingkat ranting, para kader muda telah dipersiapkan melalui berbagai kegiatan\nkeagamaan dan pembinaan yang dilakukan secara berkelanjutan. Salah satu ruang\npembinaan tersebut adalah Rebana Istiqomah Bondolharjo.</p><p>Berawal dari latihan rutin, pengajian, dan kegiatan-kegiatan\nkeagamaan lainnya, para remaja putri diberikan kesempatan untuk belajar,\nmengembangkan potensi diri, serta membangun kebersamaan. Tanpa disadari,\nkegiatan tersebut menjadi tempat tumbuhnya kader-kader muda yang nantinya siap\nmengemban amanah organisasi.</p><p>\n\n\n\n\n\n\n\n\n\n\n\n</p><p>Apa yang dilakukan para pembina saat itu mungkin terlihat\nsederhana. Namun dari ruang sederhana itulah lahir generasi yang kini berdiri\ndi garis depan sebagai penerus perjuangan.</p>",
     "published": true,
-    "publishedAt": "2026-10-15T15:57:51.178Z",
-    "updatedAt": "2026-10-21T17:29:06.122Z"
+    "publishedAt": "2026-10-23T15:57:51.178Z",
+    "updatedAt": "2026-10-23T15:29:06.122Z"
   },
   {
     "id": "1-web-development",
