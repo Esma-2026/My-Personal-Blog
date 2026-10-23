@@ -463,6 +463,8 @@ const getStoredArticles = () => {
 };
 
 let articles = getStoredArticles();
+console.log("Jumlah artikel:", articles.length);
+console.log("Data artikel:", articles);
 let currentArticleId = null;
 let isCreatingArticle = false;
 

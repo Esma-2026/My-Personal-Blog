@@ -403,4 +403,3 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", renderPublicArticles);
-
