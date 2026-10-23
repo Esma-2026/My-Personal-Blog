@@ -1001,118 +1001,159 @@ h1, h2, h3 { font-family: var(--heading); }
 .sidebar-category a:active{
   transform:scale(.97);
 }
+.mlsa-posts #article-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 21px !important;
+}
 /* =========================
-   MLSA ARTICLE GRID
+   ARTICLE JOURNEY DIVIDER
 ========================= */
 
-.community-section {
-  padding: 4rem 0 6rem;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.community-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #0f2747;
-  margin-bottom: 1rem;
-}
-
-.community-subtitle {
-  max-width: 720px;
-  margin: 0 auto;
-  color: #5b6b84;
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
-/* Grid Artikel */
-
-.mlsa-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-}
-
-/* Card Artikel */
-
-.article-card {
-  background: #fff;
-  border: 1px solid #e6ebf5;
-  border-radius: 24px;
+.article-journey-divider {
+  position: relative;
   overflow: hidden;
-  transition: all 0.25s ease;
+
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    rgba(25, 65, 130, 0.12),
+    rgba(37, 99, 235, 0.16),
+    rgba(25, 65, 130, 0.12)
+  );
+
+  border-top: 1px solid rgba(37, 99, 235, 0.08);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+/* Cahaya emas halus */
+
+.article-journey-divider::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 400px;
   height: 100%;
+
+  background: radial-gradient(
+    circle at right,
+    rgba(212, 175, 55, 0.08),
+    transparent 75%
+  );
+
+  pointer-events: none;
 }
 
-.article-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(15, 39, 71, 0.08);
-}
+/* EXPLORE MORE */
 
-.article-card a {
+.journey-badge {
   display: block;
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-}
 
-.article-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
+  margin-bottom: 1.5rem;
 
-.article-card-content {
-  padding: 1.5rem;
-}
+  text-align: center;
 
-.article-category {
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  background: #e8f1ff;
-  color: #1670e6;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.article-card h3 {
-  font-family: "Manrope", sans-serif;
   font-size: 1.25rem;
-  line-height: 1.4;
-  color: #0f2747;
-  margin: 0 0 1rem;
+  font-weight: 900;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa,
+    #d4af37,
+    #f5c542
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
+.article-journey-divider h2::after {
+  content: "";
 
-.article-card p {
-  color: #60708a;
-  line-height: 1.7;
-  margin: 0;
-  font-size: 0.95rem;
+  position: absolute;
+
+  top: 0;
+  left: -150%;
+
+  width: 50%;
+  height: 100%;
+  color: whitesmoke;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 215, 0, .8),
+    rgba(255, 255, 255, .95),
+    rgba(255, 215, 0, .8),
+    transparent
+  );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+
+  animation: goldSweep 3s ease-in-out infinite;
 }
+@keyframes goldSweep {
+  0% {
+    left: -150%;
+  }
 
-/* Tablet */
+  45% {
+    left: -150%;
+  }
 
-@media (max-width: 992px) {
-  .mlsa-grid {
-    grid-template-columns: repeat(2, 1fr);
+  65% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
   }
 }
+.journey-arrow {
+  display: inline-block;
 
-/* Mobile */
+  font-size: 5rem;
 
-@media (max-width: 768px) {
-  .mlsa-grid {
-    grid-template-columns: 1fr;
+  color: #d4af37;
+
+  cursor: pointer;
+
+  text-shadow:
+    0 0 10px rgba(37, 99, 235, .25),
+    0 0 20px rgba(212, 175, 55, .35);
+
+  animation: arrowFloat 2s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: .85;
   }
 
-  .article-card img {
-    height: 200px;
+  50% {
+    transform: translateY(18px) scale(1.25);
+    opacity: 1;
   }
 }

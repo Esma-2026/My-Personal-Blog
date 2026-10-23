@@ -354,7 +354,35 @@ const renderArticleDetail = (articles) => {
   const body = document.createElement("div");
   body.className = "published-article-body";
   body.innerHTML = cleanArticleHtml(article.content);
-  detail.replaceChildren(backLink, category, title, summary, body);
+  const divider = document.createElement("section");
+divider.className = "article-journey-divider";
+divider.innerHTML = `
+  <div class="journey-badge">
+    ✦ EXPLORE MORE ARTICLES ✦
+  </div>
+
+  <h2>
+    Terus Belajar,
+    <span>Terus Bertumbuh</span>
+  </h2>
+
+  <p>
+    Setiap artikel adalah jejak perjalanan yang berbeda.
+    Masih banyak cerita, pembelajaran, pengalaman, dan eksplorasi teknologi yang menunggu untuk ditemukan.
+  </p>
+
+  <div class="journey-arrow">
+    👇
+  </div>
+`;
+detail.replaceChildren(
+  backLink,
+  category,
+  title,
+  summary,
+  body,
+  divider
+);
 };
 const renderCategoryCards = (selector, articles) => {
   const container = document.querySelector(selector);
