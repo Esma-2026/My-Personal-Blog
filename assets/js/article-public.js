@@ -196,18 +196,37 @@ const updateExistingBlogCard = (card, article) => {
 };
 
 const renderBlogCards = (articles) => {
+  console.log("RENDER BLOG CARDS JALAN 999999");
   const list = document.querySelector("#article-list");
   if (!list) return;
   const page = window.location.pathname.split("/").pop();
 
 let filteredArticles = [...articles];
-
+console.log("JUMLAH ARTIKEL:", articles.length);
+console.table(articles);
+console.log(
+  articles.map(a => ({
+    title: a.title,
+    category: a.category
+  }))
+);
 if (page === "mlsa.html") {
-  filteredArticles = filteredArticles.filter(
-    article => (article.category || "").toLowerCase() === "mlsa"
-  );
-}
 
+  console.log("HALAMAN MLSA TERDETEKSI");
+
+  console.table(
+    articles.map(a => ({
+      title: a.title,
+      category: a.category
+    }))
+  );
+
+  filteredArticles = filteredArticles.filter(
+    article => (article.category || "").trim().toLowerCase() === "mlsa"
+  );
+
+  console.log("HASIL FILTER:", filteredArticles);
+}
 if (page === "scam-ready-asean.html") {
   filteredArticles = filteredArticles.filter(
     article => (article.category || "").toLowerCase() === "scam ready asean"
@@ -247,7 +266,11 @@ renderSidebarCard("#sidebar-mlsa", mlsaLatest);
 renderSidebarCard("#sidebar-scam", scamLatest);
 renderSidebarCard("#sidebar-community", communityLatest);
 
-const articlesToRender = sortedArticles.slice(0, 6);
+let articlesToRender = sortedArticles;
+
+if (page === "blog.html") {
+  articlesToRender = sortedArticles.slice(0, 6);
+}
   articlesToRender.forEach((article) => {
     const existing = list.querySelector(`[data-article-id="${CSS.escape(String(article.id))}"]`);
     if (existing) {
@@ -394,6 +417,27 @@ renderBlogCards(articles);
 renderHomeCards(articles);
 renderArticleDetail(articles);
 renderCommunityCategories(articles); 
+const renderMLSACards = (articles) => {
+  const articleList = document.querySelector('#article-list');
+
+  if (!articleList) return;
+
+  const mlsaArticles = articles.filter(
+    article => article.category === 'MLSA'
+  );
+
+  console.log('MLSA Articles:', mlsaArticles);
+
+  // sementara untuk test
+  articleList.innerHTML = mlsaArticles
+    .map(article => `
+      <div style="padding:20px;border:1px solid #ddd;margin-bottom:16px;">
+        <h3>${article.title}</h3>
+        <p>${article.summary || ''}</p>
+      </div>
+    `)
+    .join('');
+};
 };
 document.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) return;

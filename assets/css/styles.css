@@ -886,32 +886,6 @@ h1, h2, h3 { font-family: var(--heading); }
         grid-template-columns: 1fr;
     }
 }
-.mlsa-categories {
-    padding: 60px 0 100px;
-}
-
-.mlsa-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px 28px;
-}
-
-.mlsa-group h3 {
-    margin-bottom: 18px;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--ink);
-}
-
-.mlsa-group .article-card {
-    height: 100%;
-}
-
-@media (max-width: 768px) {
-    .mlsa-grid {
-        grid-template-columns: 1fr;
-    }
-}
 .blog-layout{
   display:grid;
   grid-template-columns: 2fr 1fr;
@@ -1026,4 +1000,119 @@ h1, h2, h3 { font-family: var(--heading); }
 }
 .sidebar-category a:active{
   transform:scale(.97);
+}
+/* =========================
+   MLSA ARTICLE GRID
+========================= */
+
+.community-section {
+  padding: 4rem 0 6rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.community-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f2747;
+  margin-bottom: 1rem;
+}
+
+.community-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #5b6b84;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Grid Artikel */
+
+.mlsa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* Card Artikel */
+
+.article-card {
+  background: #fff;
+  border: 1px solid #e6ebf5;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(15, 39, 71, 0.08);
+}
+
+.article-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+.article-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.article-card-content {
+  padding: 1.5rem;
+}
+
+.article-category {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: #e8f1ff;
+  color: #1670e6;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.article-card h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #0f2747;
+  margin: 0 0 1rem;
+}
+
+.article-card p {
+  color: #60708a;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .mlsa-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .mlsa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-card img {
+    height: 200px;
+  }
 }
