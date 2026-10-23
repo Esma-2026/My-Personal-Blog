@@ -1011,3 +1011,39 @@ const initializeDashboard = () => {
 
 initializeDashboard()
 }
+async function loadImageAssets() {
+  const select = document.getElementById("figure-asset-select");
+
+  if (!select) return;
+
+  try {
+    const response = await fetch("assets/data/images.json");
+
+    const data = await response.json();
+
+    select.innerHTML =
+      '<option value="">Pilih file gambar...</option>';
+
+    data.images.forEach((image) => {
+
+      const option = document.createElement("option");
+
+      option.value = image.path;
+      option.textContent = image.title;
+
+      select.appendChild(option);
+
+    });
+
+  } catch (error) {
+
+    console.error(
+      "Gagal memuat library gambar:",
+      error
+    );
+
+    select.innerHTML =
+      '<option value="">Gagal memuat gambar</option>';
+  }
+}
+loadImageAssets();

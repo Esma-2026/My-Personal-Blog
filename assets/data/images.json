@@ -1,0 +1,120 @@
+{
+  "images": [
+    {
+      "title": "01 Scam Ready",
+      "path": "assets/images/01-scam-ready.png"
+    },
+    {
+      "title": "02 Scam Email",
+      "path": "assets/images/02-scam-email.png"
+    },
+    {
+      "title": "Agentic AI",
+      "path": "assets/images/agentic.ai.png"
+    },
+    {
+      "title": "Email MLSA",
+      "path": "assets/images/email-MLSA-sensor.png"
+    },
+    {
+      "title": "Esma Learning Journey",
+      "path": "assets/images/Esma-Learning.Journey.png"
+    },
+    {
+      "title": "GitHub Copilot Badge Learning Path",
+      "path": "assets/images/GC-BadgeLearningPath.png"
+    },
+    {
+      "title": "GitHub Copilot Gambar 4",
+      "path": "assets/images/GC-gambar4.png"
+    },
+    {
+      "title": "GitHub Copilot Gambar 6",
+      "path": "assets/images/GC-GambarEnam.png"
+    },
+    {
+      "title": "GitHub Copilot Gambar 5",
+      "path": "assets/images/GC-GambarLima.png"
+    },
+    {
+      "title": "GitHub Copilot Gambar 1",
+      "path": "assets/images/GC-GambarSatu.png"
+    },
+    {
+      "title": "GitHub Copilot Gambar 3",
+      "path": "assets/images/GC-GambarTiga.png"
+    },
+    {
+      "title": "GitHub Copilot Cover",
+      "path": "assets/images/GC-KartuArtikel.png"
+    },
+    {
+      "title": "GitHub Commit",
+      "path": "assets/images/Github.commit.png"
+    },
+    {
+      "title": "Hello Journey",
+      "path": "assets/images/halal-journey.png"
+    },
+    {
+      "title": "Introduction to GitHub",
+      "path": "assets/images/Intro.to.github.png"
+    },
+    {
+      "title": "Kartu Artikel 2",
+      "path": "assets/images/kartu.artikel.2.png"
+    },
+    {
+      "title": "Kartu Portofolio",
+      "path": "assets/images/kartu.portofolio.png"
+    },
+    {
+      "title": "Landing Page Blog",
+      "path": "assets/images/landing page blog.jpeg"
+    },
+    {
+      "title": "Landing Page Sehati",
+      "path": "assets/images/Landing-Page-Sehati.png"
+    },
+    {
+      "title": "Learning Journey",
+      "path": "assets/images/learning.journey.png"
+    },
+    {
+      "title": "Modul Learning",
+      "path": "assets/images/Modul.Learning.png"
+    },
+    {
+      "title": "Microsoft Learn",
+      "path": "assets/images/Ms.Learn.png"
+    },
+    {
+      "title": "Visual Studio Code",
+      "path": "assets/images/Vs.Code.png"
+    },
+    {
+      "title": "Profil Microsoft Learn",
+      "path": "assets/images/Profil-Ms.Learn.png"
+    },
+    {
+      "title": "Pengembangan Web",
+      "path": "assets/images/Pengembangan-Web.png"
+    },
+    {
+      "title": "NA Kajian",
+      "path": "assets/images/NA-kajian.png"
+    },
+    {
+      "title": "NA Kartu Artikel",
+      "path": "assets/images/NA-kartu-artikel.png"
+    },
+    {
+      "title": "NA Pengukuhan",
+      "path": "assets/images/NA-pengukuhan.png"
+    },
+    {
+      "title": "NA Kanal Youtube",
+      "path": "assets/images/NA-kanal-utube.png"
+    }
+  ]
+}
