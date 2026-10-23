@@ -74,20 +74,35 @@
     </div>
 
     <section class="section dashboard-section" data-admin-shell hidden>
-
       <div class="container dashboard-shell">
-        <aside class="dashboard-sidebar">
-          <div class="dashboard-sidebar-header">
-            <div><p class="eyebrow">ARTIKEL</p>
-            <h2>Daftar tulisan</h2>
-            </div>
-              <button class="button button-primary" id="new-article" type="button">Tambah baru</button>
-           </div>
-           <div id="article-list-panel" class="article-list-panel" aria-live="polite"></div>
-         </aside>
 
-      <div class="dashboard-editor">
-        <form id="article-form" class="article-form">
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-sidebar-header">
+      <div>
+        <p class="eyebrow">WEBSITE CONTENT</p>
+        <h2>Semua Artikel</h2>
+      </div>
+    </div>
+
+    <div
+      id="article-list-panel"
+      class="article-list-panel"
+      aria-live="polite">
+    </div>
+  </aside>
+
+  <div class="dashboard-editor">
+
+    <div class="dashboard-editor-header">
+      <button
+        class="button button-primary"
+        id="new-article"
+        type="button">
+        Artikel Baru
+      </button>
+    </div>
+
+    <form id="article-form" class="article-form">
 
               <div class="field-group">
                 <label for="article-title">Judul artikel</label>

@@ -574,18 +574,35 @@ const renderArticleList = () => {
     listItem.type = "button";
     listItem.className = `article-list-item ${article.id === currentArticleId ? "is-active" : ""}`;
     listItem.innerHTML = `
-  <span class="article-list-tag">
-    ${article.category}
+  <div class="article-list-content">
+    <span class="article-list-tag">
+      ${article.category}
+    </span>
+
+    <strong>
+      ${article.title}
+    </strong>
+
+    <small>
+      ${article.subcategory || ""}
+    </small>
+  </div>
+
+  <span class="article-delete" data-id="${article.id}">
+    🗑️
   </span>
-
-  <strong>
-    ${article.title}
-  </strong>
-
-  <small>
-    ${article.subcategory || ""}
-  </small>
 `;
+const deleteButton = listItem.querySelector(".article-delete");
+
+deleteButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  if (!confirm(`Hapus artikel "${article.title}"?`)) {
+    return;
+  }
+
+  console.log("Delete artikel:", article.id);
+});
     listItem.addEventListener("click", () => {
       currentArticleId = article.id;
       updateForm(article);

@@ -343,6 +343,38 @@ h1, h2, h3 { font-family: var(--heading); }
 .article-list-tag { color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
 .article-list-item strong { font-family: var(--heading); font-size: 14px; line-height: 1.5; }
 .article-list-item small { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.article-list-item {
+  position: relative;
+}
+
+.article-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.article-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.article-delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: .6;
+  transition: opacity .2s ease;
+  padding: 0;
+}
+
+.article-delete-btn:hover {
+  opacity: 1;
+}
 .dashboard-editor { padding: 24px 32px; }
 .article-form { display: flex; flex-direction: column; gap: 18px; }
 .field-grid.two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
