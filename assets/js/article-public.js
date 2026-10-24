@@ -445,6 +445,7 @@ renderBlogCards(articles);
 renderHomeCards(articles);
 renderArticleDetail(articles);
 renderCommunityCategories(articles); 
+renderHalalJourneyCards(articles);
 const renderMLSACards = (articles) => {
   const articleList = document.querySelector('#article-list');
 
@@ -475,3 +476,50 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", renderPublicArticles);
+const renderHalalJourneyCards = (articles) => {
+
+  const halalJourneyArticles = articles.filter(
+    article => article.category === "Halal Journey"
+  );
+
+  renderCategoryCards(
+    "#halal-journey-list",
+    halalJourneyArticles
+  );
+const renderHalalJourneyCategories = (articles) => {
+
+  const halalHub = articles.filter(
+    article =>
+      article.category === "Halal Journey" &&
+      article.subcategory === "Halal Hub"
+  );
+
+  const sehati = articles.filter(
+    article =>
+      article.category === "Halal Journey" &&
+      article.subcategory === "Sehati"
+  );
+
+  const halalAdvisor = articles.filter(
+    article =>
+      article.category === "Halal Journey" &&
+      article.subcategory === "Halal Advisor"
+  );
+
+  renderCategoryCards(
+    "#halalhub-list",
+    halalHub
+  );
+
+  renderCategoryCards(
+    "#sehati-list",
+    sehati
+  );
+
+  renderCategoryCards(
+    "#halaladvisor-list",
+    halalAdvisor
+  );
+};
+
+};

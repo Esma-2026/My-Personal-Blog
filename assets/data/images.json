@@ -115,6 +115,34 @@
     {
       "title": "NA Kanal Youtube",
       "path": "assets/images/NA-kanal-utube.png"
-    }
+    },
+    {
+  "title": "HJ Gambar Dua",
+  "path": "assets/images/HJ-GambarDua.jpg"
+},
+{
+  "title": "HJ Gambar Empat",
+  "path": "assets/images/HJ-GambarEmpat.png"
+},
+{
+  "title": "HJ Gambar Enam",
+  "path": "assets/images/HJ-GambarEnam.png"
+},
+{
+  "title": "HJ Gambar Lima",
+  "path": "assets/images/HJ-GambarLima.png"
+},
+{
+  "title": "HJ Gambar Satu",
+  "path": "assets/images/HJ-GambarSatu.jpg"
+},
+{
+  "title": "HJ Gambar Tiga",
+  "path": "assets/images/HJ-GambarTiga.png"
+},
+{
+  "title": "HJ Kartu Artikel",
+  "path": "assets/images/HJ-KartuArtikel.png"
+}
   ]
 }
