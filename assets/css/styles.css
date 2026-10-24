@@ -1157,3 +1157,21 @@ h1, h2, h3 { font-family: var(--heading); }
     opacity: 1;
   }
 }
+.publish-title{
+    color:#1c315e;
+    font-weight:700;
+}
+
+.publish-title a{
+    color:#67aefc;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.publish-title a:hover{
+    color:#d4af37;
+}
+.section-heading{
+    margin-top: -80px;
+}
