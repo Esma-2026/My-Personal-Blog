@@ -105,6 +105,11 @@ const subcategoryOptions = {
     "Muhammadiyah",
     "Nasyiatul 'Aisyiyah",
     "Rebana Istiqomah"
+  ],
+  "Halal Journey": [
+    "Sehati",
+    "Halal Advisor",
+    "Halal Hub"
   ]
 };
 inputs.category.addEventListener("change", () => {
