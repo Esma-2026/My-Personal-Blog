@@ -267,10 +267,6 @@ renderSidebarCard("#sidebar-scam", scamLatest);
 renderSidebarCard("#sidebar-community", communityLatest);
 
 let articlesToRender = sortedArticles;
-
-if (page === "blog.html") {
-  articlesToRender = sortedArticles.slice(0, 6);
-}
   articlesToRender.forEach((article) => {
     const existing = list.querySelector(`[data-article-id="${CSS.escape(String(article.id))}"]`);
     if (existing) {
@@ -428,98 +424,69 @@ const renderCommunityCategories = (articles) => {
     rebana
   );
 };
+
+const renderUMKMEmpowermentCategories = (articles) => {
+
+  const umkmHub = articles.filter(
+    article =>
+      article.category === "UMKM Empowerment" &&
+      article.subcategory === "UMKM Hub"
+  );
+
+  const halalJourney = articles.filter(
+    article =>
+      article.category === "UMKM Empowerment" &&
+      article.subcategory === "Halal Journey"
+  );
+
+  const legalitasUsaha = articles.filter(
+    article =>
+      article.category === "UMKM Empowerment" &&
+      article.subcategory === "Legalitas Usaha"
+  );
+
+  renderCategoryCards(
+    "#umkmhub-list",
+    umkmHub
+  );
+
+  renderCategoryCards(
+    "#halaljourney-list",
+    halalJourney
+  );
+
+  renderCategoryCards(
+    "#legalitasusaha-list",
+    legalitasUsaha
+  );
+}; 
 const renderPublicArticles = async () => {
   let articles;
+
   try {
     articles = await readPublicArticles();
   } catch (error) {
     console.error(error);
+
     const disclaimer = document.querySelector("#blog-disclaimer");
+
     if (disclaimer) {
       disclaimer.hidden = false;
-      disclaimer.textContent = "Artikel terbaru belum dapat dimuat. Silakan muat ulang halaman beberapa saat lagi.";
+      disclaimer.textContent =
+        "Artikel terbaru belum dapat dimuat. Silakan muat ulang halaman beberapa saat lagi.";
     }
+
     return;
   }
-renderBlogCards(articles);
-renderHomeCards(articles);
-renderArticleDetail(articles);
-renderCommunityCategories(articles); 
-renderHalalJourneyCards(articles);
-const renderMLSACards = (articles) => {
-  const articleList = document.querySelector('#article-list');
 
-  if (!articleList) return;
-
-  const mlsaArticles = articles.filter(
-    article => article.category === 'MLSA'
-  );
-
-  console.log('MLSA Articles:', mlsaArticles);
-
-  // sementara untuk test
-  articleList.innerHTML = mlsaArticles
-    .map(article => `
-      <div style="padding:20px;border:1px solid #ddd;margin-bottom:16px;">
-        <h3>${article.title}</h3>
-        <p>${article.summary || ''}</p>
-      </div>
-    `)
-    .join('');
-};
-};
-document.addEventListener("click", (event) => {
-  if (!(event.target instanceof Element)) return;
-  const card = event.target.closest(".article-card[data-article-id]");
-  if (!card || event.target.closest("a, button, input, select, textarea")) return;
-  window.location.assign(articleHref(card.dataset.articleId));
-});
-
-document.addEventListener("DOMContentLoaded", renderPublicArticles);
-const renderHalalJourneyCards = (articles) => {
-
-  const halalJourneyArticles = articles.filter(
-    article => article.category === "Halal Journey"
-  );
-
-  renderCategoryCards(
-    "#halal-journey-list",
-    halalJourneyArticles
-  );
-const renderHalalJourneyCategories = (articles) => {
-
-  const halalHub = articles.filter(
-    article =>
-      article.category === "Halal Journey" &&
-      article.subcategory === "Halal Hub"
-  );
-
-  const sehati = articles.filter(
-    article =>
-      article.category === "Halal Journey" &&
-      article.subcategory === "Sehati"
-  );
-
-  const halalAdvisor = articles.filter(
-    article =>
-      article.category === "Halal Journey" &&
-      article.subcategory === "Halal Advisor"
-  );
-
-  renderCategoryCards(
-    "#halalhub-list",
-    halalHub
-  );
-
-  renderCategoryCards(
-    "#sehati-list",
-    sehati
-  );
-
-  renderCategoryCards(
-    "#halaladvisor-list",
-    halalAdvisor
-  );
-};
+  renderBlogCards(articles);
+  renderHomeCards(articles);
+  renderArticleDetail(articles);
+  renderCommunityCategories(articles);
+  renderUMKMEmpowermentCategories(articles);
 
 };
+document.addEventListener(
+  "DOMContentLoaded",
+  renderPublicArticles
+);

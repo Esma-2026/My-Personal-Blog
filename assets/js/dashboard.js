@@ -106,10 +106,10 @@ const subcategoryOptions = {
     "Nasyiatul 'Aisyiyah",
     "Rebana Istiqomah"
   ],
-  "Halal Journey": [
-    "Sehati",
-    "Halal Advisor",
-    "Halal Hub"
+  "UMKM Empowerment": [
+    "UMKM Hub",
+    "Halal Journey",
+    "Legalitas Usaha"
   ]
 };
 inputs.category.addEventListener("change", () => {
