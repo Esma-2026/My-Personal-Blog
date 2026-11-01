@@ -1,0 +1,49 @@
+name: Generate Image Library
+
+on:
+  push:
+    paths:
+      - 'assets/images/**'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create assets/data folder
+        run: mkdir -p assets/data
+
+      - name: Generate images.json
+        run: |
+          echo '{"images":[' > assets/data/images.json
+
+          find assets/images -type f \
+          \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) \
+          | sort | while read file
+          do
+            filename=$(basename "$file")
+            title="${filename%.*}"
+
+            echo "{\"title\":\"$title\",\"path\":\"$file\"}," >> assets/data/images.json
+          done
+
+          sed -i '$ s/,$//' assets/data/images.json
+          echo ']}' >> assets/data/images.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add assets/data/images.json
+
+          git diff --staged --quiet || git commit -m "Auto update image library"
+
+          git push
+          
