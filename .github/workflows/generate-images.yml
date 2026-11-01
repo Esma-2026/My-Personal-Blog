@@ -1,6 +1,7 @@
 name: Generate Image Library
 
 on:
+ workflow_dispatch:
   push:
     paths:
       - 'assets/images/**'
