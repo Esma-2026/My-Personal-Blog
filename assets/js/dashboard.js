@@ -560,6 +560,7 @@ const updateEditorIndicators = () => {
 };
 
 const updateForm = (article) => {
+  currentArticleId = article.id;
   selectedFigure = null;
   figureLayoutFields.hidden = true;
   if (!article) {
@@ -578,6 +579,14 @@ const updateForm = (article) => {
   inputs.category.value = article.category || "";
   inputs.summary.value = article.summary || "";
   inputs.thumbnail.value = article.thumbnail || "";
+  if (thumbnailAssetSelect) {
+  thumbnailAssetSelect.value = article.thumbnail || "";
+}
+
+if (thumbnailPreview) {
+  thumbnailPreview.src = article.thumbnail || "";
+  thumbnailPreview.hidden = !article.thumbnail;
+}
   editor.innerHTML = articleContentToHtml(article.content || "");
   savedEditorRange = null;
   editorValidationStatus.textContent = "";
@@ -696,12 +705,21 @@ form.addEventListener("submit", async (event) => {
   }
 
   if (!currentArticleId) {
-    currentArticleId = slugify(title) || `draft-${Date.now()}`;
-  }
+  const existingArticle = articles.find(
+    (article) => article.title.trim() === title.trim()
+  );
+
+  currentArticleId =
+    existingArticle?.id ||
+    slugify(title) ||
+    `draft-${Date.now()}`;
+}
 
   const articleIndex = articles.findIndex((article) => article.id === currentArticleId);
   const previousArticle = articleIndex >= 0 ? articles[articleIndex] : null;
   const now = new Date().toISOString();
+console.log("THUMBNAIL VALUE:", inputs.thumbnail.value);
+console.log("SELECT VALUE:", thumbnailAssetSelect.value);
   const nextArticle = {
     id: currentArticleId,
     title,
@@ -714,6 +732,8 @@ form.addEventListener("submit", async (event) => {
     publishedAt: previousArticle?.publishedAt || now,
     updatedAt: now
 };
+console.log("NEXT ARTICLE:", nextArticle);
+
   inputs.content.value = content;
 
   saveArticleButton.disabled = true;
@@ -1058,6 +1078,7 @@ const loadArticlesFromWebsite = async () => {
 articles = data.filter(
   article => article && article.published !== false
 );
+saveArticles();
 
 localStorage.setItem(
   STORAGE_KEY,
@@ -1155,7 +1176,11 @@ async function loadImageAssets() {
   }
 }
 
-loadImageAssets();
+(async () => {
+  await loadImageAssets();
+  await loadArticlesFromWebsite();
+  initializeDashboard();
+})();
 initializeDashboard();
 loadArticlesFromWebsite();
 }

@@ -20,13 +20,37 @@ const safeArticleSizes = new Set(["12px", "14px", "16px", "18px", "24px", "32px"
 const safeArticleLineHeights = new Set(["1.2", "1.5", "1.8", "2", "2.5"]);
 
 const readPublicArticles = async () => {
-  const response = await fetch(new URL("articles.json", window.location.href), { cache: "no-store" });
-  if (!response.ok) throw new Error(`Gagal memuat artikel publik (HTTP ${response.status}).`);
-  const parsed = await response.json();
-  if (!Array.isArray(parsed)) throw new Error("Data artikel publik tidak berbentuk daftar.");
-  return parsed.filter((article) => article && article.published !== false && article.id && article.title);
-};
+  const response = await fetch(
+    new URL("articles.json", window.location.href),
+    { cache: "no-store" }
+  );
 
+  if (!response.ok) {
+    throw new Error(
+      `Gagal memuat artikel publik (HTTP ${response.status}).`
+    );
+  }
+
+  const parsed = await response.json();
+
+  if (!Array.isArray(parsed)) {
+    throw new Error(
+      "Data artikel publik tidak berbentuk daftar."
+    );
+  }
+
+ return parsed
+  .filter((article) =>
+    article &&
+    article.published !== false &&
+    article.id &&
+    article.title
+  )
+  .sort((a, b) =>
+    new Date(b.updatedAt || b.publishedAt || 0) -
+    new Date(a.updatedAt || a.publishedAt || 0)
+  );
+};
 const safeArticleUrl = (value, protocols) => {
   try {
     const url = new URL(value, window.location.href);
@@ -122,10 +146,16 @@ const articleText = (content) => {
 const readingTime = (article) => Math.max(1, Math.ceil(articleText(article.content).trim().split(/\s+/).filter(Boolean).length / 200));
 
 const articleHref = (id) => `blog.html?article=${encodeURIComponent(id)}`;
+
 const articleCardImage = (article) => {
+  console.log(
+    "CARD IMAGE DEBUG",
+    article.id,
+    article.thumbnail
+  );
+
   return article.thumbnail || defaultCardImage;
 };
-
 
 const makeArticleCard = (article, index) => {
   const card = document.createElement("article");
@@ -207,6 +237,7 @@ console.log(
     category: a.category
   }))
 );
+
 if (page === "mlsa.html") {
 
   console.log("HALAMAN MLSA TERDETEKSI");
@@ -241,8 +272,12 @@ console.log(filteredArticles);
 
   const storedIds = new Set();
   const sortedArticles = [...filteredArticles].sort((a, b) => {
-  const aDate = Date.parse(a.publishedAt || "") || 0;
-  const bDate = Date.parse(b.publishedAt || "") || 0;
+  const aDate =
+    Date.parse(a.updatedAt || a.publishedAt || "") || 0;
+
+  const bDate =
+    Date.parse(b.updatedAt || b.publishedAt || "") || 0;
+
   return bDate - aDate;
 });
 const mlsaLatest = sortedArticles.find(
@@ -263,24 +298,12 @@ renderSidebarCard("#sidebar-mlsa", mlsaLatest);
 renderSidebarCard("#sidebar-scam", scamLatest);
 renderSidebarCard("#sidebar-community", communityLatest);
 
-let articlesToRender = sortedArticles;
-  articlesToRender.forEach((article) => {
-    const existing = list.querySelector(`[data-article-id="${CSS.escape(String(article.id))}"]`);
-    if (existing) {
-      updateExistingBlogCard(existing, article);
-    } else {
-      list.appendChild(makeArticleCard(article, list.children.length));
-    }
-    storedIds.add(String(article.id));
-  });
-
-  list.querySelectorAll("[data-dynamic-article='true']").forEach((card) => {
-    if (!storedIds.has(card.dataset.articleId)) card.remove();
-  });
-  const disclaimer = document.querySelector("#blog-disclaimer");
-  if (disclaimer) disclaimer.hidden = articles.length > 0;
-  document.querySelector("#article-search")?.dispatchEvent(new Event("input", { bubbles: true }));
-};
+list.replaceChildren(
+  ...sortedArticles.map((article, index) =>
+    makeArticleCard(article, index)
+  )
+);
+}
 
 const renderSidebarCard = (selector, article) => {
   const container = document.querySelector(selector);
@@ -296,15 +319,16 @@ const renderSidebarCard = (selector, article) => {
 const renderHomeCards = (articles) => {
   const list = document.querySelector("#home-article-list");
   if (!list || articles.length === 0) return;
-  const sortedArticles = [...articles].sort((a, b) => {
-    const aDate = Date.parse(a.publishedAt || "") || 0;
-    const bDate = Date.parse(b.publishedAt || "") || 0;
-    return bDate - aDate;
-  });
+  const sortedArticles = [...articles].sort(
+  (a, b) =>
+    (Date.parse(b.updatedAt || b.publishedAt || "") || 0) -
+    (Date.parse(a.updatedAt || a.publishedAt || "") || 0)
+);
   console.log(
   "HOME ARTICLES",
   sortedArticles.slice(0, 3).map(article => ({
     title: article.title,
+    updatedAt: article.updatedAt,
     publishedAt: article.publishedAt
   }))
 );

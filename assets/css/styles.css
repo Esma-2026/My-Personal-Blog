@@ -133,6 +133,51 @@ h1, h2, h3 { font-family: var(--heading); }
   .interest-list a { animation: none; }
 }
 
+.blog-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  min-height: 180px;
+  padding: 3rem 1.5rem;
+}
+
+#typing-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #60a5fa 35%,
+    #fbbf24 70%,
+    #d97706 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.blog-intro {
+  max-width: 900px;
+  margin: 0 auto;
+
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 500;
+
+  color: #1e293b;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
 /* Bagian isi dan kartu */
 .section { padding: 88px 0; }
 .section-tint { background: var(--soft); }
