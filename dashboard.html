@@ -139,21 +139,26 @@
 
   <div class="thumbnail-picker">
 
-    <select
-      id="article-thumbnail"
-      name="thumbnail">
+  <label for="thumbnail-asset-select">
+    Pilih thumbnail dari Assets
+  </label>
 
-      <option value="">
-        Pilih Thumbnail
-      </option>
-    </select>
-  </div>
-  <img
-    id="thumbnail-preview"
-    src=""
-    alt="Preview Thumbnail"
-    style="display:none;max-width:300px;border-radius:12px;">
+  <select
+  id="article-thumbnail"
+  name="thumbnail">
+
+  <option value="">
+    Memuat koleksi gambar...
+  </option>
+
+</select>
+
 </div>
+
+<img
+  id="thumbnail-preview"
+  alt="Preview Thumbnail"
+  hidden>
 
             <div class="field-group">
               <div class="article-content-heading">

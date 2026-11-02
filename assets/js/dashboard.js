@@ -75,16 +75,31 @@ const inputs = {
   content: document.querySelector("#article-content")
 };
 const thumbnailAssetSelect =
-  document.querySelector("#thumbnail-asset-select");
-const thumbnailPreview = document.querySelector("#thumbnail-preview");
+  document.querySelector("#article-thumbnail");
+const thumbnailPreview =
+  document.querySelector("#thumbnail-preview");
 
-if (inputs.thumbnail && thumbnailPreview) {
-  inputs.thumbnail.addEventListener("change", () => {
-    thumbnailPreview.src = inputs.thumbnail.value;
-    thumbnailPreview.style.display =
-      inputs.thumbnail.value ? "block" : "none";
-  });
+  if (thumbnailAssetSelect && thumbnailPreview) {
+
+  thumbnailAssetSelect.addEventListener(
+    "change",
+    () => {
+
+      const imagePath =
+        thumbnailAssetSelect.value;
+
+      inputs.thumbnail.value =
+        imagePath;
+
+      thumbnailPreview.src =
+        imagePath;
+
+      thumbnailPreview.hidden =
+        !imagePath;
+    }
+  );
 }
+
 const subcategoryOptions = {
   MLSA: [
     "Artificial Intelligence",
@@ -1070,26 +1085,54 @@ renderArticleList();
 };
 
 async function loadImageAssets() {
-  const select = document.getElementById("figure-asset-select");
+  const figureSelect =
+    document.getElementById("figure-asset-select");
 
-  if (!select) return;
+  const thumbnailSelect =
+    document.getElementById("article-thumbnail");
 
   try {
-    const response = await fetch("assets/data/images.json");
+    const response = await fetch(
+      "assets/data/images.json"
+    );
 
     const data = await response.json();
 
-    select.innerHTML =
-      '<option value="">Pilih file gambar...</option>';
+    if (figureSelect) {
+      figureSelect.innerHTML =
+        '<option value="">Pilih file gambar...</option>';
+    }
+
+    if (thumbnailSelect) {
+      thumbnailSelect.innerHTML =
+        '<option value="">Pilih Thumbnail</option>';
+    }
 
     data.images.forEach((image) => {
 
-      const option = document.createElement("option");
+      if (figureSelect) {
+        const figureOption =
+          document.createElement("option");
 
-      option.value = image.path;
-      option.textContent = image.title;
+        figureOption.value = image.path;
+        figureOption.textContent = image.title;
 
-      select.appendChild(option);
+        figureSelect.appendChild(
+          figureOption
+        );
+      }
+
+      if (thumbnailSelect) {
+        const thumbnailOption =
+          document.createElement("option");
+
+        thumbnailOption.value = image.path;
+        thumbnailOption.textContent = image.title;
+
+        thumbnailSelect.appendChild(
+          thumbnailOption
+        );
+      }
 
     });
 
@@ -1100,10 +1143,18 @@ async function loadImageAssets() {
       error
     );
 
-    select.innerHTML =
-      '<option value="">Gagal memuat gambar</option>';
+    if (figureSelect) {
+      figureSelect.innerHTML =
+        '<option value="">Gagal memuat gambar</option>';
+    }
+
+    if (thumbnailSelect) {
+      thumbnailSelect.innerHTML =
+        '<option value="">Gagal memuat thumbnail</option>';
+    }
   }
 }
+
 loadImageAssets();
 initializeDashboard();
 loadArticlesFromWebsite();
