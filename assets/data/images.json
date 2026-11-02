@@ -1,148 +1,82 @@
-{
-  "images": [
-    {
-      "title": "01 Scam Ready",
-      "path": "assets/images/01-scam-ready.png"
-    },
-    {
-      "title": "02 Scam Email",
-      "path": "assets/images/02-scam-email.png"
-    },
-    {
-      "title": "Agentic AI",
-      "path": "assets/images/agentic.ai.png"
-    },
-    {
-      "title": "Email MLSA",
-      "path": "assets/images/email-MLSA-sensor.png"
-    },
-    {
-      "title": "Esma Learning Journey",
-      "path": "assets/images/Esma-Learning.Journey.png"
-    },
-    {
-      "title": "GitHub Copilot Badge Learning Path",
-      "path": "assets/images/GC-BadgeLearningPath.png"
-    },
-    {
-      "title": "GitHub Copilot Gambar 4",
-      "path": "assets/images/GC-gambar4.png"
-    },
-    {
-      "title": "GitHub Copilot Gambar 6",
-      "path": "assets/images/GC-GambarEnam.png"
-    },
-    {
-      "title": "GitHub Copilot Gambar 5",
-      "path": "assets/images/GC-GambarLima.png"
-    },
-    {
-      "title": "GitHub Copilot Gambar 1",
-      "path": "assets/images/GC-GambarSatu.png"
-    },
-    {
-      "title": "GitHub Copilot Gambar 3",
-      "path": "assets/images/GC-GambarTiga.png"
-    },
-    {
-      "title": "GitHub Copilot Cover",
-      "path": "assets/images/GC-KartuArtikel.png"
-    },
-    {
-      "title": "GitHub Commit",
-      "path": "assets/images/Github.commit.png"
-    },
-    {
-      "title": "Hello Journey",
-      "path": "assets/images/halal-journey.png"
-    },
-    {
-      "title": "Introduction to GitHub",
-      "path": "assets/images/Intro.to.github.png"
-    },
-    {
-      "title": "Kartu Artikel 2",
-      "path": "assets/images/kartu.artikel.2.png"
-    },
-    {
-      "title": "Kartu Portofolio",
-      "path": "assets/images/kartu.portofolio.png"
-    },
-    {
-      "title": "Landing Page Blog",
-      "path": "assets/images/landing page blog.jpeg"
-    },
-    {
-      "title": "Landing Page Sehati",
-      "path": "assets/images/Landing-Page-Sehati.png"
-    },
-    {
-      "title": "Learning Journey",
-      "path": "assets/images/learning.journey.png"
-    },
-    {
-      "title": "Modul Learning",
-      "path": "assets/images/Modul.Learning.png"
-    },
-    {
-      "title": "Microsoft Learn",
-      "path": "assets/images/Ms.Learn.png"
-    },
-    {
-      "title": "Visual Studio Code",
-      "path": "assets/images/Vs.Code.png"
-    },
-    {
-      "title": "Profil Microsoft Learn",
-      "path": "assets/images/Profil-Ms.Learn.png"
-    },
-    {
-      "title": "Pengembangan Web",
-      "path": "assets/images/Pengembangan-Web.png"
-    },
-    {
-      "title": "NA Kajian",
-      "path": "assets/images/NA-kajian.png"
-    },
-    {
-      "title": "NA Kartu Artikel",
-      "path": "assets/images/NA-kartu-artikel.png"
-    },
-    {
-      "title": "NA Pengukuhan",
-      "path": "assets/images/NA-pengukuhan.png"
-    },
-    {
-      "title": "NA Kanal Youtube",
-      "path": "assets/images/NA-kanal-utube.png"
-    },
-    {
-  "title": "HJ Gambar Dua",
-  "path": "assets/images/HJ-GambarDua.jpg"
-},
-{
-  "title": "HJ Gambar Empat",
-  "path": "assets/images/HJ-GambarEmpat.png"
-},
-{
-  "title": "HJ Gambar Enam",
-  "path": "assets/images/HJ-GambarEnam.png"
-},
-{
-  "title": "HJ Gambar Lima",
-  "path": "assets/images/HJ-GambarLima.png"
-},
-{
-  "title": "HJ Gambar Satu",
-  "path": "assets/images/HJ-GambarSatu.jpg"
-},
-{
-  "title": "HJ Gambar Tiga",
-  "path": "assets/images/HJ-GambarTiga.png"
-},
-{
-  "title": "HJ Kartu Artikel",
-  "path": "assets/images/HJ-KartuArtikel.png"
-}
-  ]
-}
+{"images":[
+{"title":"01-scam-ready","path":"assets/images/01-scam-ready.png"},
+{"title":"02-scam-email","path":"assets/images/02-scam-email.png"},
+{"title":"explore-365","path":"assets/images/10102026/explore-365.png"},
+{"title":"identitas-auth","path":"assets/images/10102026/identitas-auth.png"},
+{"title":"kontrol-akses","path":"assets/images/10102026/kontrol-akses.png"},
+{"title":"pusat-zero-trust","path":"assets/images/10102026/pusat-zero-trust.png"},
+{"title":"zero-trust","path":"assets/images/10102026/zero-trust.png"},
+{"title":"01-foundational-csharp-certificate","path":"assets/images/13102026/01-foundational-csharp-certificate.png"},
+{"title":"02-foundational-csharp-learning-paths","path":"assets/images/13102026/02-foundational-csharp-learning-paths.png"},
+{"title":"03-first-csharp-program-console","path":"assets/images/13102026/03-first-csharp-program-console.png"},
+{"title":"04-add-logic","path":"assets/images/13102026/04-add-logic.png"},
+{"title":"05-percabangan","path":"assets/images/13102026/05-percabangan.png"},
+{"title":"06-work-withC","path":"assets/images/13102026/06-work-withC.png"},
+{"title":"07-implementasi-konversi","path":"assets/images/13102026/07-implementasi-konversi.png"},
+{"title":"08-create-methods","path":"assets/images/13102026/08-create-methods.png"},
+{"title":"09-method-console","path":"assets/images/13102026/09-method-console.png"},
+{"title":"10-debug","path":"assets/images/13102026/10-debug.png"},
+{"title":"11-materi-debugging","path":"assets/images/13102026/11-materi-debugging.png"},
+{"title":"12-except-handling","path":"assets/images/13102026/12-except-handling.png"},
+{"title":"13-program-console","path":"assets/images/13102026/13-program-console.png"},
+{"title":"kartu.artikel","path":"assets/images/13102026/kartu.artikel.jpg"},
+{"title":"Esma-Learning.Journey","path":"assets/images/Esma-Learning.Journey.png"},
+{"title":"GC-BadgeLearningPath","path":"assets/images/GC-BadgeLearningPath.png"},
+{"title":"GC-GambarEnam","path":"assets/images/GC-GambarEnam.png"},
+{"title":"GC-GambarLima","path":"assets/images/GC-GambarLima.png"},
+{"title":"GC-GambarSatu","path":"assets/images/GC-GambarSatu.png"},
+{"title":"GC-GambarTiga","path":"assets/images/GC-GambarTiga.png"},
+{"title":"GC-KartuArtikel","path":"assets/images/GC-KartuArtikel.png"},
+{"title":"GC-gambar4","path":"assets/images/GC-gambar4.png"},
+{"title":"Github.commit","path":"assets/images/Github.commit.png"},
+{"title":"HJ-GambarDua","path":"assets/images/HJ-GambarDua.jpg"},
+{"title":"HJ-GambarEmpat","path":"assets/images/HJ-GambarEmpat.png"},
+{"title":"HJ-GambarEnam","path":"assets/images/HJ-GambarEnam.png"},
+{"title":"HJ-GambarLima","path":"assets/images/HJ-GambarLima.png"},
+{"title":"HJ-GambarSatu","path":"assets/images/HJ-GambarSatu.jpg"},
+{"title":"HJ-GambarTiga","path":"assets/images/HJ-GambarTiga.png"},
+{"title":"HJ-KartuArtikel","path":"assets/images/HJ-KartuArtikel.png"},
+{"title":"Intro.to.github","path":"assets/images/Intro.to.github.png"},
+{"title":"Landing-Page-Sehati","path":"assets/images/Landing-Page-Sehati.png"},
+{"title":"Modul.Learning","path":"assets/images/Modul.Learning.png"},
+{"title":"Ms.Learn","path":"assets/images/Ms.Learn.png"},
+{"title":"NA-grup-rebana","path":"assets/images/NA-grup-rebana.png"},
+{"title":"NA-kajian","path":"assets/images/NA-kajian.png"},
+{"title":"NA-kanal-utube","path":"assets/images/NA-kanal-utube.png"},
+{"title":"NA-kartu-artikel","path":"assets/images/NA-kartu-artikel.png"},
+{"title":"NA-kolase-prestasi","path":"assets/images/NA-kolase-prestasi.png"},
+{"title":"NA-pengukuhan","path":"assets/images/NA-pengukuhan.png"},
+{"title":"NA-sumpah-jabatan","path":"assets/images/NA-sumpah-jabatan.png"},
+{"title":"Pengembangan-Web","path":"assets/images/Pengembangan-Web.png"},
+{"title":"Profil-Ms.Learn","path":"assets/images/Profil-Ms.Learn.png"},
+{"title":"Sertifikat-Coding-Camp","path":"assets/images/Sertifikat-Coding-Camp.png"},
+{"title":"UMKM-BeaCukai","path":"assets/images/UMKM-BeaCukai.png"},
+{"title":"UMKM-Day1","path":"assets/images/UMKM-Day1.jpg"},
+{"title":"UMKM-Day2","path":"assets/images/UMKM-Day2.jpg"},
+{"title":"UMKM-FoberDau2","path":"assets/images/UMKM-FoberDau2.png"},
+{"title":"UMKM-FoberDay1","path":"assets/images/UMKM-FoberDay1.png"},
+{"title":"UMKM-Foto4","path":"assets/images/UMKM-Foto4.jpg"},
+{"title":"UMKM-Foto=-Penutupan","path":"assets/images/UMKM-Foto=-Penutupan.png"},
+{"title":"UMKM-GoogleTrend","path":"assets/images/UMKM-GoogleTrend.png"},
+{"title":"UMKM-HargaEkspor","path":"assets/images/UMKM-HargaEkspor.jpg"},
+{"title":"UMKM-ITPC","path":"assets/images/UMKM-ITPC.png"},
+{"title":"UMKM-KartuArtikel","path":"assets/images/UMKM-KartuArtikel.png"},
+{"title":"UMKM-NoorFahmi","path":"assets/images/UMKM-NoorFahmi.png"},
+{"title":"UMKM-PraktekDigital","path":"assets/images/UMKM-PraktekDigital.jpg"},
+{"title":"UMKM-SimulasiEskpor","path":"assets/images/UMKM-SimulasiEskpor.png"},
+{"title":"Vs.Code","path":"assets/images/Vs.Code.png"},
+{"title":"agentic.ai","path":"assets/images/agentic.ai.png"},
+{"title":"email-MLSA-sensor","path":"assets/images/email-MLSA-sensor.png"},
+{"title":"esma020588","path":"assets/images/esma020588.jpeg"},
+{"title":"halal-journey","path":"assets/images/halal-journey.png"},
+{"title":"kartu.artikel.2","path":"assets/images/kartu.artikel.2.png"},
+{"title":"kartu.portofolio","path":"assets/images/kartu.portofolio.png"},
+{"title":"kartu.learn","path":"assets/images/kartu.project/kartu.learn.png"},
+{"title":"kartu.ms.learn","path":"assets/images/kartu.project/kartu.ms.learn.png"},
+{"title":"kartu.portofolio","path":"assets/images/kartu.project/kartu.portofolio.png"},
+{"title":"kartu.visual.code","path":"assets/images/kartu.project/kartu.visual.code.png"},
+{"title":"landing page blog","path":"assets/images/landing page blog.jpeg"},
+{"title":"learning.journey","path":"assets/images/learning.journey.png"},
+{"title":"profil.black","path":"assets/images/profil.black.png"},
+{"title":"profil.cutout","path":"assets/images/profil.cutout.png"}
+]}
