@@ -608,7 +608,23 @@ deleteButton.addEventListener("click", (event) => {
     return;
   }
 
-  console.log("Delete artikel:", article.id);
+  const articleIndex = articles.findIndex(
+    (item) => item.id === article.id
+  );
+
+  if (articleIndex === -1) {
+    return;
+  }
+
+  articles.splice(articleIndex, 1);
+
+  saveArticles();
+
+  if (currentArticleId === article.id) {
+    currentArticleId = articles[0]?.id || null;
+  }
+
+  renderArticleList();
 });
     listItem.addEventListener("click", () => {
       currentArticleId = article.id;

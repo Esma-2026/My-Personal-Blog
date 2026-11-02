@@ -132,17 +132,22 @@
               <textarea id="article-summary" name="summary" rows="3" placeholder="Tuliskan ringkasan singkat artikel" required></textarea>
             </div>
 
-           <div class="field-group">
-  <label for="article-thumbnail">Thumbnail Artikel</label>
+<div class="field-group">
+  <label for="article-thumbnail">
+    Thumbnail Artikel
+  </label>
 
   <div class="thumbnail-picker">
-    <input
-      type="text"
-      id="article-thumbnail"
-      name="thumbnail"
-      placeholder="/assets/images/thumbnail.jpg">
-  </div>
 
+    <select
+      id="article-thumbnail"
+      name="thumbnail">
+
+      <option value="">
+        Pilih Thumbnail
+      </option>
+    </select>
+  </div>
   <img
     id="thumbnail-preview"
     src=""
