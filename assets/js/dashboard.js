@@ -1014,8 +1014,45 @@ const initializeDashboard = () => {
   renderArticleList();
 };
 
-initializeDashboard()
+const loadArticlesFromWebsite = async () => {
+  try {
+    const response = await fetch("articles.json", {
+      cache: "no-store"
+    });
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) return;
+
+articles = data.filter(
+  article => article && article.published !== false
+);
+
+localStorage.setItem(
+  STORAGE_KEY,
+  JSON.stringify(articles)
+);
+
+if (articles.length > 0) {
+  currentArticleId = articles[0].id;
+  updateForm(articles[0]);
 }
+
+renderArticleList();
+
+    console.log(
+      "Artikel berhasil dimuat dari articles.json:",
+      articles.length
+    );
+
+  } catch (error) {
+    console.error(
+      "Gagal memuat articles.json:",
+      error
+    );
+  }
+};
+
 async function loadImageAssets() {
   const select = document.getElementById("figure-asset-select");
 
@@ -1052,3 +1089,6 @@ async function loadImageAssets() {
   }
 }
 loadImageAssets();
+initializeDashboard();
+loadArticlesFromWebsite();
+}

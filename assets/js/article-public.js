@@ -123,12 +123,9 @@ const readingTime = (article) => Math.max(1, Math.ceil(articleText(article.conte
 
 const articleHref = (id) => `blog.html?article=${encodeURIComponent(id)}`;
 const articleCardImage = (article) => {
-  return (
-    article.thumbnail ||
-    cardImagesByArticleId.get(String(article.id)) ||
-    defaultCardImage
-  );
+  return article.thumbnail || defaultCardImage;
 };
+
 
 const makeArticleCard = (article, index) => {
   const card = document.createElement("article");
