@@ -483,8 +483,6 @@ const getStoredArticles = () => {
 };
 
 let articles = getStoredArticles();
-console.log("Jumlah artikel:", articles.length);
-console.log("Data artikel:", articles);
 let currentArticleId = null;
 let isCreatingArticle = false;
 
@@ -718,8 +716,6 @@ form.addEventListener("submit", async (event) => {
   const articleIndex = articles.findIndex((article) => article.id === currentArticleId);
   const previousArticle = articleIndex >= 0 ? articles[articleIndex] : null;
   const now = new Date().toISOString();
-console.log("THUMBNAIL VALUE:", inputs.thumbnail.value);
-console.log("SELECT VALUE:", thumbnailAssetSelect.value);
   const nextArticle = {
     id: currentArticleId,
     title,
@@ -732,7 +728,6 @@ console.log("SELECT VALUE:", thumbnailAssetSelect.value);
     publishedAt: previousArticle?.publishedAt || now,
     updatedAt: now
 };
-console.log("NEXT ARTICLE:", nextArticle);
 
   inputs.content.value = content;
 
@@ -1092,11 +1087,6 @@ if (articles.length > 0) {
 
 renderArticleList();
 
-    console.log(
-      "Artikel berhasil dimuat dari articles.json:",
-      articles.length
-    );
-
   } catch (error) {
     console.error(
       "Gagal memuat articles.json:",
@@ -1104,6 +1094,65 @@ renderArticleList();
     );
   }
 };
+
+async function getGitHubImages(
+  path = "assets/images"
+) {
+
+  const response = await fetch(
+    `https://api.github.com/repos/Esma-2026/My-Personal-Blog/contents/${path}`
+  );
+
+  if (!response.ok) {
+
+    console.error(
+      "GitHub API Error:",
+      response.status,
+      await response.text()
+    );
+
+    return [];
+
+  }
+
+  const items = await response.json();
+
+  let images = [];
+
+  for (const item of items) {
+
+    if (item.type === "dir") {
+
+      const childImages =
+        await getGitHubImages(
+          item.path
+        );
+
+      images.push(
+        ...childImages
+      );
+
+    } else if (
+      item.type === "file" &&
+      /\.(png|jpg|jpeg|webp)$/i.test(
+        item.name
+      )
+    ) {
+
+      images.push({
+        title: item.name.replace(
+          /\.[^/.]+$/,
+          ""
+        ),
+        path: item.path
+      });
+
+    }
+
+  }
+
+  return images;
+}
 
 async function loadImageAssets() {
   const figureSelect =
@@ -1113,11 +1162,10 @@ async function loadImageAssets() {
     document.getElementById("article-thumbnail");
 
   try {
-    const response = await fetch(
-      "assets/data/images.json"
+    const images = await getGitHubImages();
+    images.sort((a, b) =>
+    a.title.localeCompare(b.title)
     );
-
-    const data = await response.json();
 
     if (figureSelect) {
       figureSelect.innerHTML =
@@ -1129,7 +1177,7 @@ async function loadImageAssets() {
         '<option value="">Pilih Thumbnail</option>';
     }
 
-    data.images.forEach((image) => {
+    images.forEach((image) => {
 
       if (figureSelect) {
         const figureOption =
