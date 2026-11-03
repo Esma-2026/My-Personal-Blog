@@ -19,9 +19,7 @@ img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
 .container {
-  width: 100%;
-  max-width: 1200px;
-  padding-inline: 16px;
+  width: min(1600px, calc(100% - 40px));
   margin: 0 auto;
 }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
@@ -179,7 +177,7 @@ h1, h2, h3 { font-family: var(--heading); }
 
   color: #1e293b;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   width: 100%;
 }
 
@@ -717,7 +715,11 @@ h1, h2, h3 { font-family: var(--heading); }
   .heading-note { max-width: 100%; }
   .article-grid, .umkm-grid { grid-template-columns: 1fr; gap: 15px; }
   .article-visual { height: 210px; }
-  .article-visual img { width: 58%; }
+  .article-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
   .article-content { padding: 18px; }
   .article-content > p:not(.article-meta) { min-height: auto; }
   .home-cta { padding-top: 0; }
