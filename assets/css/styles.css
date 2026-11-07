@@ -384,9 +384,34 @@ h1, h2, h3 { font-family: var(--heading); }
 .published-article-body h2 { margin: 34px 0 14px; color: var(--ink); font-size: 28px; line-height: 1.35; }
 .published-article-body h3 { margin: 26px 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
 .published-article-body ul, .published-article-body ol { margin: 0 0 22px; padding-left: 28px; }
-.published-article-body figure { max-width: 100%; margin: 30px auto; text-align: center; }
-.published-article-body figure img { max-height: 680px; margin: 0 auto; object-fit: contain; }
-.published-article-body figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
+.published-article-body figure {
+    max-width: 70%;
+    margin: 32px auto;
+    padding: 10px;
+    background:var(--blue);
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 12px goldenrod;
+
+    text-align: center;
+}
+
+.published-article-body figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    border-radius: 5px;
+}
+
+.published-article-body figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
 .published-article-body a { color: #0875c9; text-decoration: underline; text-underline-offset: 3px; }
 .published-article[hidden] { display: none; }
 .admin-login-wrap { padding: 20px 0 10px; }
