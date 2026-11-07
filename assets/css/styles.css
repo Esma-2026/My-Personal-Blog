@@ -385,23 +385,23 @@ h1, h2, h3 { font-family: var(--heading); }
 .published-article-body h3 { margin: 26px 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
 .published-article-body ul, .published-article-body ol { margin: 0 0 22px; padding-left: 28px; }
 .published-article-body {
-    text-align:justify;
+    text-align:auto;
 }
 
 .published-article-body figure {
     display: inline-block;
     margin: 32px auto;
     padding: 10px;
-    background: transparent;
+    background: goldenrod;
     border: 1px solid var(--blue);
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.35);
+    box-shadow: 0 4px 12px var(--blue);
     text-align: center;
 }
 
 .published-article-body figure img {
     display:block;
-    text-align:center;
+    text-align: center;
     max-width: 100%;
     height: auto;
 }
