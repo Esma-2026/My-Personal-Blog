@@ -385,10 +385,10 @@ h1, h2, h3 { font-family: var(--heading); }
 .published-article-body h3 { margin: 26px 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
 .published-article-body ul, .published-article-body ol { margin: 0 0 22px; padding-left: 28px; }
 .published-article-body figure {
-    max-width: 70%;
+    max-width:100%;
     margin: 32px auto;
     padding: 10px;
-    background:var(--blue);
+    background:transparent;
     border: 1px solid #e5e7eb;
     border-radius: 20px;
 
@@ -397,13 +397,13 @@ h1, h2, h3 { font-family: var(--heading); }
 
     text-align: center;
 }
-
 .published-article-body figure img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
 
-    border-radius: 5px;
+    image-rendering: auto;
 }
 
 .published-article-body figcaption {
