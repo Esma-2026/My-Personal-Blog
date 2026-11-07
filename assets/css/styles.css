@@ -384,26 +384,26 @@ h1, h2, h3 { font-family: var(--heading); }
 .published-article-body h2 { margin: 34px 0 14px; color: var(--ink); font-size: 28px; line-height: 1.35; }
 .published-article-body h3 { margin: 26px 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
 .published-article-body ul, .published-article-body ol { margin: 0 0 22px; padding-left: 28px; }
+.published-article-body {
+    text-align:justify;
+}
+
 .published-article-body figure {
-    max-width:100%;
+    display: inline-block;
     margin: 32px auto;
     padding: 10px;
-    background:transparent;
-    border: 1px solid #e5e7eb;
+    background: transparent;
+    border: 1px solid var(--blue);
     border-radius: 20px;
-
-    box-shadow:
-        0 4px 12px goldenrod;
-
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.35);
     text-align: center;
 }
+
 .published-article-body figure img {
-    display: block;
-    width: auto;
+    display:block;
+    text-align:center;
     max-width: 100%;
     height: auto;
-
-    image-rendering: auto;
 }
 
 .published-article-body figcaption {
